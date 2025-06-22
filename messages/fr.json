@@ -1,0 +1,37 @@
+{
+  "HomePage": {
+    "title": "bonjour le monde !",
+    "about": "À propos",
+    "contact": "Contact",
+    "home": "Accueil",
+    "heroTitle": "Next.js Multilang Starter",
+    "heroDescription": "Une boilerplate Next.js multilingue moderne avec internationalisation."
+  },
+  "ContactPage": {
+    "title": "Contactez-nous",
+    "description": "N'hésitez pas à nous contacter via le formulaire ci-dessous.",
+    "form": {
+      "name": "Nom",
+      "namePlaceholder": "Votre nom",
+      "email": "E-mail",
+      "emailPlaceholder": "Votre adresse e-mail",
+      "message": "Message",
+      "messagePlaceholder": "Tapez votre message...",
+      "submit": "Envoyer le message",
+      "errors": {
+        "name": {
+          "required": "Le nom est requis.",
+          "min": "Le nom doit comporter au moins 2 caractères."
+        },
+        "email": {
+          "required": "L'e-mail est requis.",
+          "email": "Adresse e-mail invalide."
+        },
+        "message": {
+          "required": "Le message est requis.",
+          "min": "Le message doit comporter au moins 5 caractères."
+        }
+      }
+    }
+  }
+}

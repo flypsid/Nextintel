@@ -1,0 +1,38 @@
+{
+  "HomePage": {
+    "title": "Hello world!",
+    "about": "About",
+    "contact": "Contact",
+    "home": "Home",
+    "heroTitle": "Next.js Multilang Starter",
+    "heroDescription": "A modern, multilingual Next.js boilerplate with internationalization."
+  },
+
+  "ContactPage": {
+    "title": "Contact us",
+    "description": "Feel free to reach out using the form below.",
+    "form": {
+      "name": "Name",
+      "namePlaceholder": "Your name",
+      "email": "Email",
+      "emailPlaceholder": "Your email address",
+      "message": "Message",
+      "messagePlaceholder": "Type your message...",
+      "submit": "Send message",
+      "errors": {
+        "name": {
+          "required": "Name is required.",
+          "min": "Name must be at least 2 characters."
+        },
+        "email": {
+          "required": "Email is required.",
+          "email": "Invalid email address."
+        },
+        "message": {
+          "required": "Message is required.",
+          "min": "Message must be at least 5 characters."
+        }
+      }
+    }
+  }
+}
