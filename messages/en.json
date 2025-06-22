@@ -1,15 +1,28 @@
 {
   "HomePage": {
     "title": "Hello world!",
-    "about": "About",
-    "contact": "Contact",
-    "home": "Home",
+    "nav": {
+      "home": "Home",
+      "about": "About",
+      "contact": "Contact"
+    },
     "heroTitle": "Next.js Multilang Starter",
-    "heroDescription": "A modern, multilingual Next.js boilerplate with internationalization."
+    "heroDescription": "A modern, multilingual Next.js boilerplate with internationalization.",
+    "ctaButton": "Contact Us"
   },
-
+  "AboutPage": {
+    "title": "About Us",
+    "subtitle": "Discover Who We Are",
+    "description": "We are a passionate team dedicated to providing the best solutions for our clients.",
+    "features": {
+      "1": "Modern and scalable solution",
+      "2": "Experienced team at your service",
+      "3": "User-centered approach"
+    },
+    "imagePlaceholder": "About image"
+  },
   "ContactPage": {
-    "title": "Contact us",
+    "title": "Contact Us",
     "description": "Feel free to reach out using the form below.",
     "form": {
       "name": "Name",
@@ -19,6 +32,12 @@
       "message": "Message",
       "messagePlaceholder": "Type your message...",
       "submit": "Send message",
+      "requiredFields": "Fields marked with <span>*</span> are required",
+      "success": {
+        "title": "Message sent!",
+        "message": "Thank you for your message. We'll get back to you as soon as possible.",
+        "button": "Send another message"
+      },
       "errors": {
         "name": {
           "required": "Name is required.",

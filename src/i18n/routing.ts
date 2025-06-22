@@ -11,14 +11,6 @@ export const routing = defineRouting({
     "/": {
       en: "/",
       fr: "/",
-    },
-    "/about": {
-      en: "/about",
-      fr: "/a-propos",
-    },
-    "/contact": {
-      en: "/contact-us",
-      fr: "/contactez-nous",
-    },
+    }
   },
 });
