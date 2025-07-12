@@ -117,4 +117,58 @@ We leverage **Model Context Protocol (MCP)** servers to provide secure, contextu
 
 ---
 
-This stack is optimized for **AI-native, multi-agent systems**, **SaaS**, and **Web3-native platforms**, prioritizing **contextual automation**, **data-aware logic**, and \*\*scalable developer w
+## 🔐 Authentication (Better Auth)
+
+### Overview
+
+- **Better Auth** is the recommended authentication framework for TypeScript projects in this stack. It supports both **Prisma** and **Drizzle** as ORM adapters, enabling flexible, type-safe, and scalable auth flows.
+
+### ORM Integration
+
+- **Prisma**: Use the `prismaAdapter` from Better Auth for seamless integration. Make sure to generate the required schema using the Better Auth CLI and keep your Prisma schema in sync.
+- **Drizzle**: Use the `drizzleAdapter` for Drizzle ORM. You can customize table names and schema mapping as needed. Always generate and apply migrations after schema changes.
+
+#### Example: Prisma Adapter
+
+```ts
+import { betterAuth } from "better-auth";
+import { prismaAdapter } from "better-auth/adapters/prisma";
+import { PrismaClient } from "@prisma/client";
+
+const prisma = new PrismaClient();
+export const auth = betterAuth({
+  database: prismaAdapter(prisma, { provider: "postgresql" }),
+});
+```
+
+#### Example: Drizzle Adapter
+
+```ts
+import { betterAuth } from "better-auth";
+import { drizzleAdapter } from "better-auth/adapters/drizzle";
+import { db } from "./database";
+
+export const auth = betterAuth({
+  database: drizzleAdapter(db, { provider: "pg" }),
+});
+```
+
+#### Schema Generation
+
+- Use the Better Auth CLI to generate the required schema for your ORM:
+  - For Prisma: `npx @better-auth/cli@latest generate --output prisma/schema.prisma`
+  - For Drizzle: `npx @better-auth/cli@latest generate --output src/schema/auth.ts`
+- Always apply migrations after schema changes (`npx prisma db push` for Prisma, `npx drizzle-kit migrate` for Drizzle).
+
+### Best Practices
+
+- **Environment Variables**: Store all secrets (JWT, OAuth, DB credentials) in `.env` and never commit them.
+- **Schema Sync**: Regenerate and apply migrations whenever you update your auth config or upgrade Better Auth.
+- **Custom Tables**: If you use custom table names, map them explicitly in the adapter config.
+- **Plugins**: Leverage Better Auth plugins (e.g., Autumn, Polar, Dub Analytics) for advanced features like billing, analytics, and usage tracking.
+- **API Security**: Always validate and sanitize user input, even when using Zod schemas.
+- **Session Management**: Use secure cookies and set appropriate session expiration policies.
+- **Testing**: Add integration tests for all critical auth flows (sign up, sign in, password reset, 2FA).
+- **Documentation**: Document your auth strategy and any customizations in this file for team clarity.
+
+---
